@@ -34,7 +34,7 @@ Mostly specific to Mac OS X but should work on Windows and Linux as well.
   - Requires Docker 1.9+ - using networking, built in bridge driver
 - create a Docker Machine (I use beedemo-local as `{machine_name}`)
   - `docker-machine create --driver=virtualbox --virtualbox-memory=4096 {machine_name}`
-  - set env for newly created machine: `eval "$(docker-machine env)"`
+  - set env for newly created machine: `eval "$(docker-machine env {machine_name})"`
 - Mac OS X ONLY: replace vboxfs (VirtualBox share) /Users share with nfs share [optional - but increases performance on Mac OS X]
   - Create NFS share on Mac OS X side:
     - create exports file: `sudo vi /etc/exports` with contents (IP used here is your `docker-machine ip {machine_name}`): `/Users 192.168.99.100 -alldirs -mapall={your_username}`
